@@ -1,0 +1,49 @@
+# Curso Deploy no Heroku - Flask + SQLite ou PostgreSQL | Tutorial
+
+    https://www.youtube.com/watch?v=VgqYlAm7CF4
+
+# Python Interpreter
+
+    # Select option system default python installed
+
+# Install all dependencies packages and libraries
+
+     # Install gunicorn manually - Production server python
+
+        $ pip install gunicorn
+
+            # Terminal return
+
+                (venv) PS C:\projects\python\api-music-python> pip install gunicorn
+                Collecting gunicorn
+                  Using cached gunicorn-20.1.0-py3-none-any.whl (79 kB)
+                Requirement already satisfied: setuptools>=3.0 in c:\projects\python\api-music-python\venv\lib\site-packages (from gunicorn) (60.2.0)
+                Installing collected packages: gunicorn
+                Successfully installed gunicorn-20.1.0
+                WARNING: You are using pip version 21.3.1; however, version 22.3.1 is available.
+                You should consider upgrading via the 'C:\projects\python\api-music-python\venv\Scripts\python.exe -m pip install --upgrade pip' command.
+
+        $ C:\projects\python\api-music-python\venv\Scripts\python.exe -m pip install --upgrade pip
+
+            # Terminal return
+                ...
+                Installing collected packages: pip
+                  Attempting uninstall: pip
+                    Found existing installation: pip 21.3.1
+                    Uninstalling pip-21.3.1:
+                      Successfully uninstalled pip-21.3.1
+                Successfully installed pip-22.3.1
+
+    # Create a new file call "Procfile", in root directory
+
+        # Add this line
+
+            web: gunicorn app:app
+
+    # Create a new file automatically call "requirements", in root directory, fallow at down line command
+
+        $ pip freeze > requirements.txt
+
+    # Install automatically "requirements"
+
+        $ pip install requirements
