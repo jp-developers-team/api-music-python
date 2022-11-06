@@ -54,6 +54,30 @@
 
             $ pip install requirements
 
+    # Heroku config "Postgres"
+
+        # All addons
+
+            https://elements.heroku.com/addons
+
+        # Heroku Postgres
+
+            https://elements.heroku.com/addons/heroku-postgresql
+
+        # primeiro criar o projeto no heroku
+
+            $ heroku login
+
+            $ heroku create apimusicpython
+
+        # Rodar o comando para criar a integração com o banco de dados "Postgres"
+
+            $ heroku addons:create heroku-postgresql:hobby-dev
+
+        # Por último fazer o "PUSH HEROKU" do REPOSITÓRIO GITHUB para o REPOSITÓRIO HEROKU
+
+            $ git push heroku main
+
     # Heroku integration
 
         # Heroku install
@@ -84,4 +108,23 @@
                         To https://git.heroku.com/apimusicpython.git
                         * [new branch]      main -> main
 
-        # x
+        # Update repository in Heroku, last files altered
+
+            $ git push heroku main
+
+    # Possíveis erros
+
+        Apolo Emanuel
+        há 8 meses
+        Resolvi isso de forma simples :
+
+        No arquivo principal [normalmente chamado de app.py] coloque isso no final :
+
+        if _name_ == '__main__':
+            app.run(debug=False)
+
+        E no Procfile coloque isso :
+
+        web: gunicorn app:app
+
+        Dessa forma o app já vai ser executado no servidor sem da erro.
