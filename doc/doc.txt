@@ -10,29 +10,31 @@
 
      # Install gunicorn manually - Production server python
 
-        $ pip install gunicorn
+        (venv) PS C:\projects\python\api-music-python>
 
-            # Terminal return
+            $ pip install gunicorn
 
-                (venv) PS C:\projects\python\api-music-python> pip install gunicorn
-                Collecting gunicorn
-                  Using cached gunicorn-20.1.0-py3-none-any.whl (79 kB)
-                Requirement already satisfied: setuptools>=3.0 in c:\projects\python\api-music-python\venv\lib\site-packages (from gunicorn) (60.2.0)
-                Installing collected packages: gunicorn
-                Successfully installed gunicorn-20.1.0
-                WARNING: You are using pip version 21.3.1; however, version 22.3.1 is available.
-                You should consider upgrading via the 'C:\projects\python\api-music-python\venv\Scripts\python.exe -m pip install --upgrade pip' command.
+                # Terminal return
 
-        $ C:\projects\python\api-music-python\venv\Scripts\python.exe -m pip install --upgrade pip
+                    (venv) PS C:\projects\python\api-music-python> pip install gunicorn
+                    Collecting gunicorn
+                      Using cached gunicorn-20.1.0-py3-none-any.whl (79 kB)
+                    Requirement already satisfied: setuptools>=3.0 in c:\projects\python\api-music-python\venv\lib\site-packages (from gunicorn) (60.2.0)
+                    Installing collected packages: gunicorn
+                    Successfully installed gunicorn-20.1.0
+                    WARNING: You are using pip version 21.3.1; however, version 22.3.1 is available.
+                    You should consider upgrading via the 'C:\projects\python\api-music-python\venv\Scripts\python.exe -m pip install --upgrade pip' command.
 
-            # Terminal return
-                ...
-                Installing collected packages: pip
-                  Attempting uninstall: pip
-                    Found existing installation: pip 21.3.1
-                    Uninstalling pip-21.3.1:
-                      Successfully uninstalled pip-21.3.1
-                Successfully installed pip-22.3.1
+            $ C:\projects\python\api-music-python\venv\Scripts\python.exe -m pip install --upgrade pip
+
+                # Terminal return
+                    ...
+                    Installing collected packages: pip
+                      Attempting uninstall: pip
+                        Found existing installation: pip 21.3.1
+                        Uninstalling pip-21.3.1:
+                          Successfully uninstalled pip-21.3.1
+                    Successfully installed pip-22.3.1
 
     # Create a new file call "Procfile", in root directory
 
@@ -42,8 +44,44 @@
 
     # Create a new file automatically call "requirements", in root directory, fallow at down line command
 
-        $ pip freeze > requirements.txt
+        (venv) PS C:\projects\python\api-music-python>
+
+            $ pip freeze > requirements.txt
 
     # Install automatically "requirements"
 
-        $ pip install requirements
+        (venv) PS C:\projects\python\api-music-python>
+
+            $ pip install requirements
+
+    # Heroku integration
+
+        # Heroku install
+
+            (venv) PS C:\projects\python\api-music-python>
+
+                $ heroku login
+
+                $ heroku create apimusicpython
+
+                    # Terminal return
+
+                        (venv) PS C:\projects\python\api-music-python> heroku create apimusicpython
+                         »   Warning: heroku update available from 7.53.0 to 7.65.0.
+                        Creating ⬢ apimusicpython... done
+                        https://apimusicpython.herokuapp.com/ | https://git.heroku.com/apimusicpython.git
+
+                $ git push heroku main
+
+                    # Terminal return
+
+                        ...
+                        Released v3
+                        remote:        https://apimusicpython.herokuapp.com/ deployed to Heroku
+
+                        ...
+                        remote: Verifying deploy... done.
+                        To https://git.heroku.com/apimusicpython.git
+                        * [new branch]      main -> main
+
+        # x
